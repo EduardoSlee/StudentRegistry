@@ -1,0 +1,11 @@
+{"@t":"2024-05-17T20:46:30.5683109Z","@m":"Service URL: https://localhost:7213/swagger","@i":"c75fd9aa","@tr":"789016102fa60f63783105392fadf1b7","@sp":"d76b64c5b8c7f148"}
+{"@t":"2024-05-17T20:46:30.6751873Z","@m":"Service URL: https://localhost:7213/swagger/index.html","@i":"b5f54379","@tr":"98cfdc93b5498639be05be9998cbe6b3","@sp":"9df5c8a2bb87db2c"}
+{"@t":"2024-05-17T20:46:30.7694939Z","@m":"Service URL: https://localhost:7213/swagger/swagger-ui-standalone-preset.js","@i":"457a9136","@tr":"872d41ad8b28c72664c9495ade712974","@sp":"c38530a161121b86"}
+{"@t":"2024-05-17T20:46:30.7697891Z","@m":"Service URL: https://localhost:7213/swagger/swagger-ui.css","@i":"d5e0150a","@tr":"2cb35698f4359868420235d493f10472","@sp":"c08c25ed5f089860"}
+{"@t":"2024-05-17T20:46:30.7697900Z","@m":"Service URL: https://localhost:7213/swagger/swagger-ui-bundle.js","@i":"60d02f81","@tr":"8007810c333cfd4d2c48b01d62c31e65","@sp":"f812a85b574ab67f"}
+{"@t":"2024-05-17T20:46:31.0468251Z","@m":"Service URL: https://localhost:7213/swagger/v1/swagger.json","@i":"6cbbd3cc","@tr":"0a8f4de4cfcc8dc9fd1508747e3dc953","@sp":"4fecd2b7ab570d0b"}
+{"@t":"2024-05-17T20:46:41.5363831Z","@m":"Service URL: https://localhost:7213/students/4","@i":"8031f2f0","@tr":"bc11a12ae3a79901630fd3dc714abc7f","@sp":"e01ad75f7884ad43"}
+{"@t":"2024-05-17T20:46:56.0464206Z","@m":"Service URL: https://localhost:7213/students","@i":"3ccbdb0b","@tr":"72443397b1bf0744551d49d6aafc03a4","@sp":"f09fbb9219e806f7"}
+{"@t":"2024-05-17T20:47:22.6851726Z","@m":"Service URL: https://localhost:7213/students/3","@i":"56449f16","@tr":"ec86f7b10a18aa9775755e1a4440f3b5","@sp":"a0135567d7605f76"}
+{"@t":"2024-05-17T20:47:36.5950919Z","@m":"Service URL: https://localhost:7213/students/excel","@i":"aeb566da","@tr":"3a812e16761e084657e4791c915aaee5","@sp":"3797577e6980b8b9"}
+{"@t":"2024-05-17T20:48:08.1971460Z","@m":"Service URL: https://localhost:7213/students/3","@i":"56449f16","@tr":"d3472032c8a8dfdc563d459d6da4c4e7","@sp":"d95a8e1d494a0171"}
