@@ -36,7 +36,8 @@ namespace StudentRegistry.Tests.Services.Mappings
                 EmailAddress = "EmailAddressTest",
                 Nationality = "NationalityTest",
                 PhoneNumber = "PhoneNumberTest",
-                Photo = "PhotoTest"
+                Photo = "PhotoTest",
+                CreateDate = DateTime.Today
             };
 
             var studentResult = _mapper.Map<StudentResult>(student);
@@ -54,6 +55,7 @@ namespace StudentRegistry.Tests.Services.Mappings
             studentResult.Nationality.Should().Be(student.Nationality);
             studentResult.PhoneNumber.Should().Be(student.PhoneNumber);
             studentResult.Photo.Should().Be(student.Photo);
+            studentResult.CreateDate.Should().Be(student.CreateDate.ToString("dd/MM/yyyy"));
         }
 
         [Fact]
@@ -104,7 +106,8 @@ namespace StudentRegistry.Tests.Services.Mappings
                 EmailAddress = "EmailAddressTest",
                 Nationality = "NationalityTest",
                 PhoneNumber = "PhoneNumberTest",
-                Photo = "PhotoTest"
+                Photo = "PhotoTest",
+                CreateDate = DateTime.Today
             };
 
             var studentReport = _mapper.Map<StudentReport>(student);
@@ -120,6 +123,7 @@ namespace StudentRegistry.Tests.Services.Mappings
             studentReport.EmailAddress.Should().Be(student.EmailAddress);
             studentReport.Nationality.Should().Be(student.Nationality);
             studentReport.PhoneNumber.Should().Be(student.PhoneNumber);
+            studentReport.CreateDate.Should().Be(student.CreateDate);
         }
     }
 }

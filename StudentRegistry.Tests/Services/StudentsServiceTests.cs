@@ -79,7 +79,8 @@ namespace StudentRegistry.Tests.Services
                 EmailAddress = "EmailAddressTest",
                 Nationality = "NationalityTest",
                 PhoneNumber = "PhoneNumberTest",
-                Photo = "PhotoTest"
+                Photo = "PhotoTest",
+                CreateDate = DateTime.Today
             };
 
             _studentsRepositoryMock.Setup(studentRepository => studentRepository.GetStudentByIdAsync(It.IsAny<int>()))
@@ -90,6 +91,53 @@ namespace StudentRegistry.Tests.Services
             studentResult.Should().NotBeNull();
             studentResult.Should().BeOfType<StudentResult>();
             studentResult.Should().BeEquivalentTo(_mapper.Map<StudentResult>(_mapper.Map<Student>(student)));
+        }
+
+        [Fact]
+        public async void GetAllStudentsAsync_WhenRequestGiven_ShouldReturnStudentResults()
+        {
+            var students = new Student[]
+            {
+                new()
+                {
+                    Id = 1,
+                    Name = "NameTest",
+                    LastName = "LastTest",
+                    BirthDate = DateTime.Today,
+                    Sex = true,
+                    DocumentNumber = "DocumentNumberTest",
+                    DocumentType = "DocumentTypeTest",
+                    EmailAddress = "EmailAddressTest",
+                    Nationality = "NationalityTest",
+                    PhoneNumber = "PhoneNumberTest",
+                    Photo = "PhotoTest",
+                    CreateDate = DateTime.Today
+                },
+                new()
+                {
+                    Id = 2,
+                    Name = "NameTest2",
+                    LastName = "LastTest2",
+                    BirthDate = DateTime.Today.AddDays(-1),
+                    Sex = true,
+                    DocumentNumber = "DocumentNumberTest2",
+                    DocumentType = "DocumentTypeTest2",
+                    EmailAddress = "EmailAddressTest2",
+                    Nationality = "NationalityTest2",
+                    PhoneNumber = "PhoneNumberTest2",
+                    Photo = "PhotoTest2",
+                    CreateDate = DateTime.Today
+                },
+            };
+
+            _studentsRepositoryMock.Setup(studentRepository => studentRepository.GetAllStudentsAsync())
+            .ReturnsAsync(students);
+
+            var studentResults = await _studentsService.GetAllStudentsAsync();
+
+            studentResults.Should().NotBeNull();
+            studentResults.Count().Should().Be(studentResults.Count());
+            studentResults.Should().BeEquivalentTo(students.Select(student => _mapper.Map<StudentResult>(student)));
         }
 
         [Fact]
@@ -119,7 +167,8 @@ namespace StudentRegistry.Tests.Services
                 EmailAddress = "EmailAddressTest",
                 Nationality = "NationalityTest",
                 PhoneNumber = "PhoneNumberTest",
-                Photo = "PhotoTest"
+                Photo = "PhotoTest",
+                CreateDate = DateTime.Today
             };
 
             var studentInput = new StudentInput()

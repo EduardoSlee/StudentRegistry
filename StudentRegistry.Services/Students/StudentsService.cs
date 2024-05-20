@@ -27,6 +27,13 @@ namespace StudentRegistry.Services.Students
             return _mapper.Map<StudentResult>(student);
         }
 
+        public async Task<IEnumerable<StudentResult>> GetAllStudentsAsync()
+        {
+            var students = await _studentsRepository.GetAllStudentsAsync();
+
+            return students.Select(student => _mapper.Map<StudentResult>(student));
+        }
+
         public async Task<StudentResult?> GetStudentByIdAsync(int id)
         {
             var student = await _studentsRepository.GetStudentByIdAsync(id);

@@ -8,7 +8,9 @@ namespace StudentRegistry.Services.Students.Mappings
     {
         public StudentsMappingProfile()
         {
-            CreateMap<Student, StudentResult>();
+            CreateMap<Student, StudentResult>()
+                .ForMember(dest => dest.CreateDate, options => options.MapFrom(
+                    student => student.CreateDate.ToString("dd/MM/yyyy")));
             CreateMap<StudentInput, Student>();
             CreateMap<Student, StudentReport>()
                 .ForMember(dest => dest.SexDescription, options => options.MapFrom(

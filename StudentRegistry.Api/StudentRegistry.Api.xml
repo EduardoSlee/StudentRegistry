@@ -85,6 +85,15 @@
             <remarks>Student.</remarks>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
         </member>
+        <member name="M:StudentRegistry.Api.Controllers.StudentsController.GetAllStudents">
+            <summary>Returns all existing students.</summary>
+            <response code ="200">Returns all students.</response>
+            <response code ="401">Returns an Unauthorized Error.</response>
+            <response code ="403">Returns a Forbidden Error.</response>
+            <response code ="500">Returns a server error.</response>
+            <remarks>Students.</remarks>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
         <member name="M:StudentRegistry.Api.Controllers.StudentsController.GetStudent(System.Int32)">
             <summary>Returns an existing student.</summary>
             <response code ="200">Returns student.</response>

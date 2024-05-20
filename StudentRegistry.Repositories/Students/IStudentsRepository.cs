@@ -4,6 +4,8 @@
     {
         Task AddStudentAsync(Student student);
 
+        Task<IEnumerable<Student>> GetAllStudentsAsync();
+
         Task<Student?> GetStudentByIdAsync(int id);
 
         Task UpdateStudentAsync(Student student);

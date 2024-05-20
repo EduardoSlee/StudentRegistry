@@ -23,5 +23,7 @@
         public string? Nationality { get; set; }
 
         public string? Photo { get; set; }
+
+        public string? CreateDate { get; set; }
     }
 }

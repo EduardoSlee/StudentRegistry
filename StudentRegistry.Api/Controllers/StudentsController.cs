@@ -44,6 +44,24 @@ namespace StudentRegistry.Api.Controllers
             return Created("students", await _studentsService.AddStudentAsync(studentInput));
         }
 
+        /// <summary>Returns all existing students.</summary>
+        /// <response code ="200">Returns all students.</response>
+        /// <response code ="401">Returns an Unauthorized Error.</response>
+        /// <response code ="403">Returns a Forbidden Error.</response>
+        /// <response code ="500">Returns a server error.</response>
+        /// <remarks>Students.</remarks>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(IEnumerable<StudentResult>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        [ProducesResponseType((int)HttpStatusCode.Forbidden)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        [HttpGet]
+        public async Task<IActionResult> GetAllStudents()
+        {
+            return Ok(await _studentsService.GetAllStudentsAsync());
+        }
+
         /// <summary>Returns an existing student.</summary>
         /// <response code ="200">Returns student.</response>
         /// <response code ="401">Returns an Unauthorized Error.</response>

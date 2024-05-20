@@ -53,6 +53,18 @@ namespace StudentRegistry.Api.Configuration
                 config.IncludeXmlComments(xmlPath);
             });
 
+            var corsOrigins = configuration.GetSection("Cors:Origins").Get<string[]>();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder =>
+                    {
+                        builder.WithOrigins(corsOrigins)
+                               .AllowAnyHeader()
+                               .AllowAnyMethod();
+                    });
+            });
+
             return services;
         }
 

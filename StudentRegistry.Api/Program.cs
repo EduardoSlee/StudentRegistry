@@ -49,6 +49,9 @@ using (var scope = app.Services.CreateScope())
     var rapidPayDbContext = scope.ServiceProvider.GetRequiredService<StudentRegistryDbContext>();
     rapidPayDbContext.Database.EnsureCreated();
 }
+
+app.UseCors("AllowSpecificOrigin");
+
 app.UseHttpsRedirection();
 
 app.UseApiKeyMiddleware(builder.Configuration);

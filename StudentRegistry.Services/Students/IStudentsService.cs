@@ -6,6 +6,8 @@ namespace StudentRegistry.Services.Students
     {
         Task<StudentResult> AddStudentAsync(StudentInput studentInput);
 
+        Task<IEnumerable<StudentResult>> GetAllStudentsAsync();
+
         Task<StudentResult?> GetStudentByIdAsync(int id);
 
         Task<StudentResult> UpdateStudentAsync(int id, StudentInput studentInput);

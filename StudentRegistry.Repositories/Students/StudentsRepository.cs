@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StudentRegistry.Repositories.Data;
-using System.Linq;
 
 namespace StudentRegistry.Repositories.Students
 {
@@ -17,6 +16,12 @@ namespace StudentRegistry.Repositories.Students
         {
             _studentRegistryDbContext.Students.Add(student);
             await _studentRegistryDbContext.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Student>> GetAllStudentsAsync()
+        {
+            return await _studentRegistryDbContext.Students
+                .ToListAsync();
         }
 
         public async Task<Student?> GetStudentByIdAsync(int id)
